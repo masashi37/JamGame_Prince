@@ -417,20 +417,6 @@ sentence_list[index] = new Texture(sentence_name[index]);
 }
 
 
-const char* result_texture_name[RESULT_PIC_MAX]{
-
-"res/Image/ED/akazukin.png",
-"res/Image/ED/matti.png",
-"res/Image/ED/arisu.png",
-"res/Image/ED/sirayuki.png",
-"res/Image/ED/kaguya.png",
-"res/Image/ED/sinderera.png",
-
-
-};
-for (int index = 0; index < RESULT_PIC_MAX; ++index) {
-result_list[index] = new Texture(result_texture_name[index]);
-}
 
 }
 

@@ -15,9 +15,7 @@ void Scene::setup() {
 }
 
 void Scene::update() {
-
 	switch (scene_changer_) {
-
 	case TITLE:
 		title.update();
 		break;
@@ -35,13 +33,11 @@ void Scene::update() {
 		break;
 
 	}
-
 }
 
 void Scene::draw() {
 
 	switch (scene_changer_) {
-
 	case TITLE:
 		title.draw();
 		break;
@@ -67,8 +63,9 @@ void Scene::shift() {
 	switch (scene_changer_) {
 
 	case TITLE:
-		if (App::env->isPushKey(GLFW_KEY_ENTER))
+		if (App::env->isPushKey(GLFW_KEY_ENTER)){
 			scene_changer_ = title.shift();
+		}
 		break;
 
 	case SELECT:
@@ -83,10 +80,13 @@ void Scene::shift() {
 		break;
 
 	case RESULT:
-		scene_changer_ = result.shift();
+		if (App::env->isPushKey(GLFW_KEY_ENTER)){
+			result.setResultWinner(1);
+			result.setResultChara(select.getSelectChara());
+			scene_changer_ = result.shift();
+		}
 		break;
 
 	}
-
 }
 
