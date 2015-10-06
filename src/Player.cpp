@@ -2,9 +2,9 @@
 #include "Player.h"
 
 
-Player::Player(Vec2f start_player_pos) {
-
-	Chara();
+Player::Player(Vec2f start_player_pos) :
+Chara()
+{
 
 	player_.pos = start_player_pos;
 	player_.size = Vec2f(100, 100);

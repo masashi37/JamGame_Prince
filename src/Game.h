@@ -1,9 +1,6 @@
 
 #pragma once
 
-#include "AppEnv.h"
-#include "Common.h"
-
 #include "Map.h"
 #include "Player.h"
 
@@ -19,11 +16,15 @@ private:
 
 	Vec2f map_speed_;
 
+	bool is_game_end_;
+	bool is_clear_;
+
 public:
 
 	Game();
 
 	void setPlayer(int);
+	bool getIsCreared();
 
 	void setup();
 	void update();

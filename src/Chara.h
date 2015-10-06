@@ -33,8 +33,8 @@ protected:
 		Vec2f speed;
 	};
 
-	Chara();
-
 public:
+
+	Chara();
 
 };

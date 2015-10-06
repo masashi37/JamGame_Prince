@@ -38,7 +38,20 @@ Vec2f Map::getPos() {
 	}
 	return map_pos;
 }
+Vec2f Map::getPos(int id) {
+	Vec2f pos = Vec2f::Zero();
 
+	for (int y = 0; y < MAP_LENGTH; ++y) {
+		for (int x = 0; x < MAP_WIDE; ++x) {
+
+			if (map_[y][x].state == GOAL)
+				pos = map_[y][x].pos;
+
+		}
+	}
+	return pos;
+
+}
 Vec2f Map::getPos(int y, int x) {
 	return map_[y][x].pos;
 }

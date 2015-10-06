@@ -7,11 +7,12 @@ std::shared_ptr<AppEnv> App::env;
 
 int main() {
 
-	Scene scene;
-
 	//作ったAppEnvに情報を代入
 	App::env = 
-		std::make_shared<AppEnv>(WIDTH, HEIGHT, false, true);
+		std::make_shared<AppEnv>
+		(WIDTH, HEIGHT, false, true);
+
+	Scene scene;
 
 	scene.setup();
 
@@ -22,7 +23,7 @@ int main() {
 
 		App::env->begin();
 
-		scene.draw(); //描画
+		scene.draw();
 
 		App::env->end();
 

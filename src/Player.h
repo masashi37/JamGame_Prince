@@ -1,9 +1,6 @@
 
 #pragma once
 
-#include "AppEnv.h"
-#include "Common.h"
-
 #include "Chara.h"
 
 

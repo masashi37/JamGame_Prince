@@ -23,19 +23,6 @@ private:
 	std::ifstream map_type_;
 
 
-	enum BlockType {
-		AIR,
-		FLOOR,
-		GROUND,
-		TRANS,
-		CONCRETE,
-		RED_CARPET,
-		GOAL,
-		PRINCE,
-		SPEED_DOWN,
-
-		BLOCK_TYPE_MAX,
-	};
 	enum BlockTextureType {
 		FLOOR_PIC,
 		GROUND_PIC,
@@ -53,9 +40,27 @@ public:
 
 	Map();
 
+	enum BlockType {
+		AIR,
+		FLOOR,
+		GROUND,
+		TRANS,
+		CONCRETE,
+		RED_CARPET,
+		GOAL,
+		PRINCE,
+		SPEED_DOWN,
+
+		BLOCK_TYPE_MAX,
+	};
+
+
 	Vec2f getPos();
+	//int(ステータスＩＤ)
+	Vec2f getPos(int);
 	//int(y番地), int(x番地)
 	Vec2f getPos(int, int);
+
 	void setPos(Vec2f);
 	Vec2f getSize();
 
