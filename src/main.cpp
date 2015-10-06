@@ -22,7 +22,7 @@ int main() {
 
 		App::env->begin();
 
-		scene.draw();
+		scene.draw(); //描画
 
 		App::env->end();
 
