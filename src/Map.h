@@ -10,8 +10,8 @@ class Map {
 private:
 
 	enum {
-		MAP_LENGTH = 10,
-		MAP_WIDE = 120,
+		MAP_LENGTH = 8,
+		MAP_WIDE = 130,
 	};
 
 	struct MapDate :TextureObject {
@@ -65,7 +65,6 @@ public:
 	Vec2f getSize();
 
 	void load();
-	void setup();
 	void update();
 	void draw();
 

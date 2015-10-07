@@ -2,12 +2,11 @@
 #include "Player.h"
 
 
-Player::Player(Vec2f start_player_pos) :
-Chara()
+Player::Player(Vec2f start_player_pos, Vec2f start_player_size)
 {
 
 	player_.pos = start_player_pos;
-	player_.size = Vec2f(100, 100);
+	player_.size = start_player_size;
 	player_.speed = Vec2f::Zero();
 	player_.cut_pos = Vec2f::Zero();
 	player_.cut_size = Vec2i(512, 512);

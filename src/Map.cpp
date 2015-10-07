@@ -5,12 +5,28 @@
 Map::Map() :
 	map_type_("res/mapType/map_type01.txt")
 {
+	const char* block_name[BLOCK_TEXTURE_MAX]{
+		"res/Texture/Block/floor.png",
+		"res/Texture/Block/ground.png",
+		"res/Texture/Block/trans.png",
+		"res/Texture/Block/concrete.png",
+		"res/Texture/Block/red_carpet.png",
+		"res/Texture/Block/prince.png",
+		"res/Texture/Block/speed_down.png",
+	};
+	for (int index = 0; index < BLOCK_TEXTURE_MAX; ++index) {
+		block_list_[index] = new Texture(block_name[index]);
+	}
+
+	//------------------------------------------------
+
+	auto map_size = HEIGHT / MAP_LENGTH;
 
 	for (int y = 0; y < MAP_LENGTH; ++y) {
 		for (int x = 0; x < MAP_WIDE; ++x) {
 
 			map_[y][x].size =
-				Vec2f(100, 100);
+				Vec2f(map_size, map_size);
 
 			map_[y][x].pos.x() =
 				-WIDTH / 2 + (map_[y][x].size.x() * x);
@@ -80,24 +96,6 @@ void Map::load() {
 			map_type_ >> map_[y][x].state;
 
 		}
-	}
-
-}
-
-void Map::setup() {
-
-	//ƒ}ƒbƒv---------------------------------------------
-	const char* block_name[BLOCK_TEXTURE_MAX]{
-		"res/Texture/Block/floor.png",
-		"res/Texture/Block/ground.png",
-		"res/Texture/Block/trans.png",
-		"res/Texture/Block/concrete.png",
-		"res/Texture/Block/red_carpet.png",
-		"res/Texture/Block/prince.png",
-		"res/Texture/Block/speed_down.png",
-	};
-	for (int index = 0; index < BLOCK_TEXTURE_MAX; ++index) {
-		block_list_[index] = new Texture(block_name[index]);
 	}
 
 }

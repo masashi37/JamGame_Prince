@@ -3,8 +3,33 @@
 
 
 Select::Select() :
-	font("")
+	font("res/KodomoRounded.otf")
 {
+
+	const char* text_name[CHARA_MAX]{
+		"res/Texture/Chara/alice.png",
+		"res/Texture/Chara/cinderella.png",
+		"res/Texture/Chara/kaguya.png",
+		"res/Texture/Chara/much.png",
+		"res/Texture/Chara/red_zukin.png",
+		"res/Texture/Chara/snow_white.png",
+	};
+	for (int index = 0; index < CHARA_MAX; ++index) {
+		chara_list[index] = new Texture(text_name[index]);
+	}
+
+	selection_.pic =
+		Texture("res/Texture/UI/selecticon_right.png");
+
+	back_ground_.pic =
+		Texture("res/Texture/BackGround/title.png");
+
+	select_logo_.pic =
+		Texture("res/Texture/Logo/chara_select.png");
+
+	//----------------------------------------
+
+	font.size(50);
 
 	back_ground_.pos =
 		Vec2f(-WIDTH / 2, -HEIGHT / 2);
@@ -58,34 +83,6 @@ int Select::getSelectChara() {
 	return select_chara_number_;
 }
 
-
-void Select::setup() {
-
-	const char* text_name[CHARA_MAX]{
-		"res/Texture/Chara/alice.png",
-		"res/Texture/Chara/cinderella.png",
-		"res/Texture/Chara/kaguya.png",
-		"res/Texture/Chara/much.png",
-		"res/Texture/Chara/red_zukin.png",
-		"res/Texture/Chara/snow_white.png",
-	};
-	for (int index = 0; index < CHARA_MAX; ++index) {
-		chara_list[index] = new Texture(text_name[index]);
-	}
-
-	selection_.pic =
-		Texture("res/Texture/UI/selecticon_right.png");
-
-	back_ground_.pic =
-		Texture("res/Texture/BackGround/title.png");
-
-	select_logo_.pic =
-		Texture("res/Texture/Logo/chara_select.png");
-
-	font = Font("res/KodomoRounded.otf");
-	font.size(50);
-
-}
 
 void Select::update() {
 

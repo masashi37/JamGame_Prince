@@ -5,7 +5,7 @@
 Game::Game() {
 	map.load();
 
-	map_speed_ = Vec2f(-3.0f, 0);
+	map_speed_ = Vec2f(-5.0f, 0);
 
 	is_game_end_ = false;
 	is_clear_ = NULL;
@@ -20,10 +20,6 @@ bool Game::getIsCreared() {
 	return is_clear_;
 }
 
-
-void Game::setup() {
-	map.setup();
-}
 
 void Game::update() {
 

@@ -11,7 +11,8 @@ class Game {
 private:
 
 	Map map;
-	Player player = Player(map.getPos(6, 10));
+	Player player =
+		Player(map.getPos(3, 5), map.getSize());
 
 
 	Vec2f map_speed_;
@@ -26,7 +27,6 @@ public:
 	void setPlayer(int);
 	bool getIsCreared();
 
-	void setup();
 	void update();
 	void draw();
 	SceneName shift();

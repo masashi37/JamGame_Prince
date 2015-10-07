@@ -12,7 +12,7 @@ private:
 
 public:
 
-	Player(Vec2f);
+	Player(Vec2f, Vec2f);
 
 	Vec2f getPos();
 	void setPos(Vec2f);

@@ -8,9 +8,6 @@ Scene::Scene() {
 
 
 void Scene::setup() {
-	title.setup();
-	select.setup();
-	game.setup();
 	result.setup();
 }
 

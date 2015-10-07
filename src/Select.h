@@ -40,7 +40,6 @@ public:
 
 	int getSelectChara();
 
-	void setup();
 	void update();
 	void draw();
 	SceneName shift();

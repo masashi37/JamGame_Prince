@@ -4,6 +4,15 @@
 
 Title::Title(){
 
+	title_back_ground_.pic =
+		Texture("res/Texture/BackGround/title.png");
+	title_name_logo_.pic =
+		Texture("res/Texture/Logo/title.png");
+	game_start_logo_.pic =
+		Texture("res/Texture/Logo/game_start.png");
+
+	//--------------------------------------
+
 	title_back_ground_.pos = 
 		Vec2f(-WIDTH / 2, -HEIGHT / 2);
 	title_back_ground_.size = 
@@ -33,15 +42,6 @@ Title::Title(){
 
 }
 
-
-void Title::setup() {
-	title_back_ground_.pic =
-		Texture("res/Texture/BackGround/title.png");
-	title_name_logo_.pic =
-		Texture("res/Texture/Logo/title.png");
-	game_start_logo_.pic =
-		Texture("res/Texture/Logo/game_start.png");
-}
 
 void Title::update() {
 
