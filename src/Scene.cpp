@@ -7,10 +7,6 @@ Scene::Scene() {
 }
 
 
-void Scene::setup() {
-	result.setup();
-}
-
 void Scene::update() {
 	switch (scene_changer_) {
 	case TITLE:
@@ -68,12 +64,16 @@ void Scene::shift() {
 	case SELECT:
 		if (App::env->isPushKey(GLFW_KEY_ENTER)) {
 			game.setPlayer(select.getSelectChara());
+			result.setResultChara(select.getSelectChara());
 			scene_changer_ = select.shift();
 		}
 		break;
 
 	case GAME:
-		scene_changer_ = game.shift();
+		if (game.getIsEnd()) {
+			result.setResultWinner(game.getIsCleared());
+			scene_changer_ = game.shift();
+		}
 		break;
 
 	case RESULT:

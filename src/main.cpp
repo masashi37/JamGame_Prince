@@ -14,8 +14,6 @@ int main() {
 
 	Scene scene;
 
-	scene.setup();
-
 	while (App::env->isOpen()) {
 
 		scene.update();

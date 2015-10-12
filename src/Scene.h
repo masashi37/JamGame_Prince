@@ -22,7 +22,6 @@ public:
 
 	Scene();
 
-	void setup();
 	void update();
 	void draw();
 	void shift();

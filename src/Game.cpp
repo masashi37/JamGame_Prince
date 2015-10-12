@@ -5,10 +5,10 @@
 Game::Game() {
 	map.load();
 
-	map_speed_ = Vec2f(-5.0f, 0);
+	map_speed_ = Vec2f(-10.0f, 0);
 
 	is_game_end_ = false;
-	is_clear_ = NULL;
+	is_clear_ = nullptr;
 }
 
 
@@ -16,8 +16,12 @@ void Game::setPlayer(int chara_selection_) {
 	player.setup(chara_selection_);
 }
 
-bool Game::getIsCreared() {
+bool Game::getIsCleared() {
 	return is_clear_;
+}
+
+bool Game::getIsEnd() {
+	return is_game_end_;
 }
 
 
@@ -52,9 +56,7 @@ void Game::draw() {
 }
 
 SceneName Game::shift() {
-
-	return (is_game_end_) ?
-		SceneName::RESULT : SceneName::GAME;
+	return SceneName::RESULT;
 }
 
 void Game::reset() {

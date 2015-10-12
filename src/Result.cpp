@@ -3,21 +3,40 @@
 
 
 Result::Result() {
+
+	const char* result_texture_name[RESULT_TEXTURE_MAX]{
+		"res/Texture/Ending/arisu.png",
+		"res/Texture/Ending/sinderera.png",
+		"res/Texture/Ending/kaguya.png",
+		"res/Texture/Ending/matti.png",
+		"res/Texture/Ending/akazukin.png",
+		"res/Texture/Ending/sirayuki.png",
+
+		"res/Texture/Ending/kuria.png"
+
+	};
+	for (int index = 0; index < RESULT_TEXTURE_MAX; ++index) {
+		result_list[index] = new Texture(result_texture_name[index]);
+	}
+
+	//--------------------------------------------------------------
+
 	result.pos = Vec2f(-WIDTH / 2, -HEIGHT / 2);
 	result.size = Vec2f(WIDTH, HEIGHT);
 	result.cut_size = Vec2i(1024, 512);
 
 }
 
-void Result::setResultWinner(bool win_or_lose){
+
+void Result::setResultWinner(bool win_or_lose) {
 	is_clear = win_or_lose;
 }
 
-void Result::setResultChara(int selection_result_number){
+void Result::setResultChara(int selection_result_number) {
 
 	if (is_clear == true)
 		result.pic = *result_list[WINNER];
-	if (is_clear == false){
+	else if (is_clear == false) {
 		if (selection_result_number == 0)
 			result.pic = *result_list[ALICE_LOSE];
 		else if (selection_result_number == 1)
@@ -33,26 +52,6 @@ void Result::setResultChara(int selection_result_number){
 	}
 }
 
-
-
-void Result::setup() {
-
-	const char* result_texture_name[RESULT_TEXTURE_MAX]{
-		"res/Texture/Ending/arisu.png",
-			"res/Texture/Ending/sinderera.png",
-			"res/Texture/Ending/kaguya.png",
-			"res/Texture/Ending/matti.png",
-			"res/Texture/Ending/akazukin.png",
-			"res/Texture/Ending/sirayuki.png",
-
-			"res/Texture/Ending/kuria.png"
-
-	};
-	for (int index = 0; index < RESULT_TEXTURE_MAX; ++index) {
-		result_list[index] = new Texture(result_texture_name[index]);
-	}
-
-}
 
 void Result::update() {
 
@@ -81,15 +80,15 @@ void Result::update() {
 
 void Result::draw() {
 
-		drawTextureBox(result.pos.x(),
-					   result.pos.y(),
-					   result.size.x(),
-					   result.size.y(),
-					   result.cut_pos.x(),
-					   result.cut_pos.y(),
-					   result.cut_size.x(),
-					   result.cut_size.y(),
-					   result.pic, Color::white);
+	drawTextureBox(result.pos.x(),
+		result.pos.y(),
+		result.size.x(),
+		result.size.y(),
+		result.cut_pos.x(),
+		result.cut_pos.y(),
+		result.cut_size.x(),
+		result.cut_size.y(),
+		result.pic, Color::white);
 
 	/*
 	if (is_clear == true)

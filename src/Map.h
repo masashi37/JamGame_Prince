@@ -11,7 +11,7 @@ private:
 
 	enum {
 		MAP_LENGTH = 8,
-		MAP_WIDE = 130,
+		MAP_WIDE = 120,
 	};
 
 	struct MapDate :TextureObject {

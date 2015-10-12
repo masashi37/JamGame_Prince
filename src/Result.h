@@ -23,8 +23,8 @@ private:
 	};
 	Texture* result_list[RESULT_TEXTURE_MAX];
 
-
 	TextureObject result;
+
 
 	bool is_clear;
 
@@ -32,10 +32,9 @@ public:
 
 	Result();
 	
-
 	void setResultWinner(bool);
 	void setResultChara(int);
-	void setup();
+
 	void update();
 	void draw();
 	SceneName shift();

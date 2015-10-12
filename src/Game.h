@@ -25,7 +25,8 @@ public:
 	Game();
 
 	void setPlayer(int);
-	bool getIsCreared();
+	bool getIsEnd();
+	bool getIsCleared();
 
 	void update();
 	void draw();
