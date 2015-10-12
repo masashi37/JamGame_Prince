@@ -64,7 +64,6 @@ void Scene::shift() {
 	case SELECT:
 		if (App::env->isPushKey(GLFW_KEY_ENTER)) {
 			game.setPlayer(select.getSelectChara());
-			result.setResultChara(select.getSelectChara());
 			scene_changer_ = select.shift();
 		}
 		break;
@@ -72,14 +71,13 @@ void Scene::shift() {
 	case GAME:
 		if (game.getIsEnd()) {
 			result.setResultWinner(game.getIsCleared());
+			result.setResultChara(select.getSelectChara());
 			scene_changer_ = game.shift();
 		}
 		break;
 
 	case RESULT:
 		if (App::env->isPushKey(GLFW_KEY_ENTER)){
-			result.setResultWinner(1);
-			result.setResultChara(select.getSelectChara());
 			scene_changer_ = result.shift();
 		}
 		break;

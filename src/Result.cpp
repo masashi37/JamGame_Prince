@@ -23,6 +23,7 @@ Result::Result() {
 
 	result.pos = Vec2f(-WIDTH / 2, -HEIGHT / 2);
 	result.size = Vec2f(WIDTH, HEIGHT);
+	result.cut_pos = Vec2f::Zero();
 	result.cut_size = Vec2i(1024, 512);
 
 }
@@ -55,7 +56,6 @@ void Result::setResultChara(int selection_result_number) {
 
 void Result::update() {
 
-
 	if (is_clear == true)
 	{
 
@@ -80,7 +80,8 @@ void Result::update() {
 
 void Result::draw() {
 
-	drawTextureBox(result.pos.x(),
+	drawTextureBox(
+		result.pos.x(),
 		result.pos.y(),
 		result.size.x(),
 		result.size.y(),
@@ -88,7 +89,8 @@ void Result::draw() {
 		result.cut_pos.y(),
 		result.cut_size.x(),
 		result.cut_size.y(),
-		result.pic, Color::white);
+		result.pic, 
+		Color::white);
 
 	/*
 	if (is_clear == true)

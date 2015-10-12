@@ -16,8 +16,8 @@ int main() {
 
 	while (App::env->isOpen()) {
 
-		scene.update();
 		scene.shift();
+		scene.update();
 
 		App::env->begin();
 

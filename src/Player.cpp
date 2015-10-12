@@ -46,6 +46,9 @@ void Player::setup(int selection_player_number) {
 
 void Player::update() {
 
+	if (App::env->isPressKey('A'))
+		player_.pos.x() -= 5.0f;
+
 }
 
 void Player::draw() {
